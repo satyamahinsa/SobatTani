@@ -37,6 +37,10 @@ Route::get('/kursus/kursus-1', function() {
     return view('detail-kursus', ['title' => 'Single Post']);
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/kursus/kursus-1', function() {
+    return view('detail-kursus', ['title' => 'Single Post']);
+})->middleware(['auth', 'verified'])->name('dashboard');
+
 Route::get('/jual-beli', function () {
     return view('jual-beli', ['title' => 'Jual Beli']);
 })->middleware(['auth', 'verified'])->name('dashboard');
