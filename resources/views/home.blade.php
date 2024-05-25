@@ -16,14 +16,37 @@
                 <div class="flex lg:flex-1">
                     <a href="#" class="-m-1.5 p-1.5">
                         <span class="sr-only">Your Company</span>
-                        <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="">
+                        <img class="h-20 w-auto" src="{{ asset('img/logo2.png') }}" alt="Logo">
                     </a>
                 </div>
+                @if (Route::has('login'))
                 <div class="flex lg:flex-1 lg:justify-end space-x-4">
-                    <a href="#" class="rounded-md border-2 border-green-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-600 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-300">Masuk</a>
-                    <a href="#" class="rounded-md bg-green-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Daftar</a>
+                    @auth
+                    <a
+                        href="{{ url('/dashboard') }}"
+                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+                    >
+                        Dashboard
+                    </a>
+                @else
+                    <a
+                        href="{{ route('login') }}"
+                        class="rounded-md border-2 border-green-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-600 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-300"
+                    >
+                        Masuk
+                    </a>
+
+                    @if (Route::has('register'))
+                        <a
+                            href="{{ route('register') }}"
+                            class="rounded-md bg-green-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                            Daftar
+                        </a>
+                    @endif
+                @endauth
                 </div>
             </nav>
+            @endif
         </header>
     
         <div class="relative isolate min-h-screen flex items-center justify-center pt-10 px-6 lg:px-8" style="background-image: url({{ asset('img/hero-petani.jpg') }}); background-size: cover; background-position: center;">
@@ -42,7 +65,7 @@
         <div class="flex justify-center items-center mx-auto max-w-7xl px-6 lg:px-8">
             <div class="text-center">
                 <h2 class="text-4xl font-bold tracking-tight text-green-700 sm:text-6xl">Sobat Tani</h2>
-                <p class="mt-6 text-lg leading-8 text-dark">Indonesia sebagai negara agraris memiliki keanekaragaman hayati dan sumber daya alam yang melimpah. Pertanian di Indonesia berperan penting dalam struktur perekonomian nasional dan pembangunan sosial budaya. Sektor pertanian, termasuk kehutanan dan perikanan, memiliki kontribusi signifikan terhadap PDB Indonesia. Namun, minat generasi muda dalam sektor ini menurun, menyebabkan tantangan besar bagi keberlanjutan sektor pertanian. "SobatTani" hadir sebagai solusi dengan mengintegrasikan teknologi untuk memfasilitasi petani dan generasi muda dalam menjalankan aktivitas pertanian modern, mengakses pendidikan, pasar, dan komunitas pertanian.</p>
+                <p class="mt-6 text-lg leading-8 text-dark">Indonesia sebagai negara agraris memiliki keanekaragaman hayati dan sumber daya alam yang melimpah. Pertanian di Indonesia berperan penting dalam struktur perekonomian nasional dan pembangunan sosial budaya. Sektor pertanian, termasuk kehutanan dan perikanan, memiliki kontribusi signifikan terhadap PDB Indonesia. Namun, minat generasi muda dalam sektor ini menurun, menyebabkan tantangan besar bagi keberlanjutan sektor pertanian. "SobatTani" hadir sebagai solusi dengan mengintegrasikan teknologi untuk memfasilitasi petani dan generasi muda dalam menjalankan aktivitas pertanian modern, mengakses pendidikan, pasar, dan komunitas pertanian. </p>
             </div>
         </div>
         <div class="flex justify-center items-center mx-auto mt-10 max-w-7xl lg:max-w-none px-6 lg:px-8">
