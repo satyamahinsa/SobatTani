@@ -24,60 +24,39 @@
         <div class="flex justify-center items-center mx-auto max-w-7xl px-6 lg:px-8">
             <div class="text-center">
                 <h2 class="text-4xl font-bold tracking-tight text-green-700 sm:text-6xl">Titik Kesuburan Tanah</h2>
-                <p class="mt-6 text-lg leading-8 text-dark">Menentukan titik kesuburan tanah sangat penting karena membantu optimalisasi produktivitas tanaman dengan memilih tanaman yang sesuai dengan kondisi tanah, serta meningkatkan efisiensi penggunaan pupuk dengan menentukan jenis dan jumlah yang tepat. Ini juga mendukung pengelolaan lahan secara berkelanjutan dengan menjaga kualitas dan keseimbangan nutrisi tanah, serta mengendalikan erosi karena tanah subur lebih baik dalam menahan air.Informasi kesuburan tanah membantu merencanakan sistem irigasi yang efisien, rotasi tanaman yang efektif untuk memperbaiki kualitas tanah, dan memastikan tanaman mendapatkan nutrisi yang dibutuhkan untuk tumbuh sehat. Dengan memanfaatkan OpenStreetMap, petani dapat memvisualisasikan dan memetakan titik lokasi kesuburan tanah dengan lebih mudah.</p>
+                <p class="mt-6 text-lg leading-8 text-dark">Menentukan titik kesuburan tanah sangat penting karena membantu optimalisasi produktivitas tanaman dengan memilih tanaman yang sesuai dengan kondisi tanah, serta meningkatkan efisiensi penggunaan pupuk dengan menentukan jenis dan jumlah yang tepat. Ini juga mendukung pengelolaan lahan secara berkelanjutan dengan menjaga kualitas dan keseimbangan nutrisi tanah, serta mengendalikan erosi karena tanah subur lebih baik dalam menahan air.Informasi kesuburan tanah membantu merencanakan sistem irigasi yang efisien, rotasi tanaman yang efektif untuk memperbaiki kualitas tanah, dan memastikan tanaman mendapatkan nutrisi yang dibutuhkan untuk tumbuh sehat. Dengan memanfaatkan OpenStreetMap, petani dapat memvisualisasikan dan memetakan titik lokasi kesuburan tanah dengan lebih mudah.Lokasi pada peta dibawah merupakan tempat titik tanah yg memiliki kadar kesuburan paling baik berdasarkan sumber yg didapatkan.</p>
             </div>
         </div>
         <div class="flex justify-center items-center mx-auto mt-10 max-w-7xl lg:max-w-none px-6 lg:px-8">
             <div id="map" style="width: 100%; height: 500px;"></div>
             <script>
-                var map = L.map('map').setView([-2.5489, 118.0149], 4); // Koordinat tengah Indonesia dan level zoom 5
-    
-                // Tambahkan layer peta dari OpenStreetMap
-                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                    attribution: '&copy; OpenStreetMap</a> contributors'
-                }).addTo(map);
-        
-                // Tambahkan layer untuk menggambar dan mengedit
-                var drawnItems = new L.FeatureGroup();
-                map.addLayer(drawnItems);
-        
-                // Inisialisasi plugin Leaflet.draw
-                var drawControl = new L.Control.Draw({
-                    edit: {
-                        featureGroup: drawnItems
-                    },
-                    draw: {
-                        polygon: true, // Aktifkan penggambaran poligon
-                        polyline: false, // Nonaktifkan penggambaran polyline
-                        circle: false, // Nonaktifkan penggambaran lingkaran
-                        rectangle: false, // Nonaktifkan penggambaran persegi panjang
-                        marker: true // Aktifkan penggambaran marker
-                    }
-                });
-                map.addControl(drawControl);
-        
-                // Event listener untuk menangani hasil gambaran/penambahan fitur
-                map.on(L.Draw.Event.CREATED, function (event) {
-                    var layer = event.layer;
-                    drawnItems.addLayer(layer);
-        
-                    // Mendapatkan koordinat marker yang baru ditambahkan
-                    var latLng = layer.getLatLng();
-                    swal({
-                        title: "Koordinat Lokasi",
-                        text: `Latitude : ${latLng.lat},
-                         Longitude : ${latLng.lng}`,
-                        icon: "success",
-                    });
-                });
-        
-                // Tambahkan plugin Leaflet.Control.Geocoder
-                L.Control.geocoder().addTo(map);
+            var map = L.map('map').setView([-2.548926, 118.014863], 5);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+            
+            var stations = [
+                    { name: 'Madiun Fertile Soil', location: [-7.61667, 111.65] },
+                    { name: 'Magetan Fertile Land', location: [-7.64472, 111.35917] },
+                    { name: 'Malang Rich Soil', location: [-8.16667, 112.66667] },
+                    { name: 'Bandung Fertile Area', location: [-7.10000, 107.60000] },
+                    { name: 'Ciamis Fertile Zone', location: [-7.28333, 108.41667] },
+                    { name: 'Bogor Fertile Region', location: [-6.58333, 106.71667] },
+                    { name: 'Cirebon Fertile Field', location: [-6.80000, 108.56667] },
+                    { name: 'Garut Fertile Territory', location: [-7.38333, 107.76667] },
+                    { name: 'Aceh Fertile Land', location: [4.69514, 96.74940] },
+                    { name: 'Yogyakarta Fertile Area', location: [-7.87538, 110.42621] }
+                ];
+
+            
+            stations.forEach(function(station) {
+                L.marker(station.location).addTo(map)
+                    .bindPopup(station.name);
+            });
             </script>
         </div>
-        <div class="mt-5 flex items-center justify-center gap-x-5">
-            <a href="#" class="rounded-md bg-green-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Daftarkan Titik Kesuburan</a>
-        </div>
+        
     </div>
   
     <footer class="bg-green-700 py-8">

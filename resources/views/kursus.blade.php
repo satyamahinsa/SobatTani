@@ -95,6 +95,20 @@
     </article>
 </div>
 
+        @if (session('status'))
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Sukses',
+                        text: '{{ session('status') }}',
+                        confirmButtonText: 'OK'
+                    });
+                });
+            </script>
+        
+        @endif
+
 
 
         </div>
