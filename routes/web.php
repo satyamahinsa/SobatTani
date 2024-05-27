@@ -12,7 +12,7 @@ Route::get('/auth', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('dashboard', ['title' => 'Dashboard']);
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -30,18 +30,27 @@ Route::post('login', [AuthenticatedSessionController::class, 'store']);
 //Route Permintaan Tiap Halaman
 Route::get('/kursus', function () {
     return view('kursus', ['title' => 'Kursus']);
-});
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+
+Route::get('/kursus/kursus-1', function() {
+    return view('detail-kursus', ['title' => 'Single Post']);
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/kursus/kursus-1', function() {
+    return view('detail-kursus', ['title' => 'Single Post']);
+})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/jual-beli', function () {
     return view('jual-beli', ['title' => 'Jual Beli']);
-});
+})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/harga-pasar', function () {
     return view('harga-pasar', ['title' => 'Harga Pasar']);
-});
+})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/titik-kesuburan-tanah', function () {
     return view('titik-kesuburan-tanah', ['title' => 'Titik Kesuburan Tanah']);
-});
+})->middleware(['auth', 'verified'])->name('dashboard');
 
 require __DIR__.'/auth.php';
