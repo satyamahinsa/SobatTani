@@ -62,7 +62,7 @@
             <div class="row">
               <!-- /.col -->
               <div class="input-group mb-3">
-                <button class="btn btn-lg btn-primary w-100 fs-6" style="background-color: #218838; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#28a745'" onmouseout="this.style.backgroundColor='#218838'" type="submit">Sign In</button>
+                <button class="btn btn-lg btn-primary w-100 fs-6" style="background-color: #218838; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#28a745'" onmouseout="this.style.backgroundColor='#218838'" type="submit" >Daftar</button>
             </div>
               <!-- /.col -->
             </div>
@@ -76,17 +76,5 @@
        </div> 
       </div>
     </div>
-
-@if ($message = Session::get('success'))
-<div class="alert alert-success" role="alert">
-    {{ $message }}
-</div>
-@endif
-
-@if ($message = Session::get('failed'))
-<div class="alert alert-danger" role="alert">
-    {{ $message }}
-</div>
-@endif
 </body>
 </html>

@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 Route::get('/', function () {
     return view('home', ['title' => 'Home']);
 });
+
 Route::get('/auth', function () {
     return view('auth.login');
 });
