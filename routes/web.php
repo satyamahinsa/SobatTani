@@ -1,19 +1,20 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
+use App\Models\Kursus;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\KursusController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\HargaPasarController;
+use App\Http\Controllers\JualBeliController;
 
 Route::get('/', function () {
     return view('home', ['title' => 'Home']);
 });
+
 Route::get('/auth', function () {
     return view('auth.login');
 });
-
-Route::get('/dashboard', function () {
-    return view('dashboard', ['title' => 'Dashboard']);
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -28,29 +29,19 @@ Route::get('login', [AuthenticatedSessionController::class, 'create'])
 Route::post('login', [AuthenticatedSessionController::class, 'store']);
 
 //Route Permintaan Tiap Halaman
-Route::get('/kursus', function () {
-    return view('kursus', ['title' => 'Kursus']);
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/kursus', [KursusController::class, 'index'])->middleware(['auth', 'verified'])->name('kursus');
 
 
-Route::get('/kursus/kursus-1', function() {
-    return view('detail-kursus', ['title' => 'Single Post']);
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/kursus/{kursus:slug}', function (Kursus $kursus) {
+    return view('detail-kursus', ['kursus' => $kursus]);
+})->middleware(['auth', 'verified'])->name('kursus');
 
-Route::get('/kursus/kursus-1', function() {
-    return view('detail-kursus', ['title' => 'Single Post']);
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/jual-beli', [JualBeliController::class, 'index'])->middleware(['auth', 'verified'])->name('kursus');
 
-Route::get('/jual-beli', function () {
-    return view('jual-beli', ['title' => 'Jual Beli']);
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::get('/harga-pasar', function () {
-    return view('harga-pasar', ['title' => 'Harga Pasar']);
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/harga-pasar', [HargaPasarController::class, 'index'])->middleware(['auth', 'verified'])->name('kursus');
 
 Route::get('/titik-kesuburan-tanah', function () {
     return view('titik-kesuburan-tanah', ['title' => 'Titik Kesuburan Tanah']);
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth', 'verified'])->name('kursus');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

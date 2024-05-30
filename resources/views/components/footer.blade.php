@@ -1,4 +1,4 @@
-<footer class="bg-green-700  py-8">
+<footer class="bg-green-700 py-8 px-10">
     <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- Alamat Kantor -->

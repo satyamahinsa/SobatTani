@@ -1,26 +1,28 @@
 <x-layout>
     <x-slot:title>{{ $title }}</x-slot:title>
 
-    <div class="bg-white">
     <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-        <h2 class="text-2xl font-bold tracking-tight text-gray-900">Customers also purchased</h2>
-
+      <div class="flex justify-center my-5 items-center mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="text-center">
+              <h2 class="text-4xl font-bold tracking-tight text-green-700 sm:text-6xl">Jual Beli Komoditas</h2>
+              <p class="mt-6 text-lg leading-8 text-dark">Jual Beli dari berbagai komoditas pertanian di Indonesia</p>
+          </div>
+      </div>
         <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-        <div class="group relative">
-            <div id="product-image" class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80 cursor-pointer">
-                <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="Front of men's Basic Tee in black." class="h-full w-full object-cover object-center lg:h-full lg:w-full">
-            </div>
-            <div class="mt-4 flex justify-between">
-            <div>
-                <h3 class="text-sm text-gray-700">
-                    Cangkul Premium
-                </h3>
-                <p class="mt-1 text-sm text-gray-500">Cangkul</p>
-            </div>
-            <p class="text-sm font-medium text-gray-900">Rp 65.000</p>
-            </div>
-        </div>
-
+          @foreach($barangs as $barang)
+          <div class="group relative rounded-lg border-solid border-2 border-gray-100 shadow-md p-3">
+              <div id="product-image" class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80 cursor-pointer">
+                  <img src="{{ $barang->gambar_produk }}" alt="{{ $barang->nama }}" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+              </div>
+              <div class="mt-4 flex justify-between">
+              <div>
+                  <h3 class="text-sm text-gray-700">{{ $barang->nama }}</h3>
+                  <p class="mt-1 text-sm text-gray-500">{{ $barang->nama }}</p>
+              </div>
+              <p class="text-sm font-medium text-gray-900">Rp {{ $barang->harga }}</p>
+              </div>
+          </div>
+          @endforeach
         <!-- More products... -->
         </div>
     </div>
@@ -80,12 +82,12 @@
                 <img src="https://tailwindui.com/img/ecommerce-images/product-quick-preview-02-detail.jpg" alt="Two each of gray, white, and black shirts arranged on table." class="object-cover object-center">
               </div>
               <div class="sm:col-span-8 lg:col-span-7">
-                <h2 class="text-2xl font-bold text-gray-900 sm:pr-12">Cangkul</h2>
+                <h2 class="text-2xl font-bold text-gray-900 sm:pr-12">{{ $barang->nama }}</h2>
   
                 <section aria-labelledby="information-heading" class="mt-2">
                   <h3 id="information-heading" class="sr-only">Product information</h3>
   
-                  <p class="text-2xl text-gray-900">Rp 65.000</p>
+                  <p class="text-2xl text-gray-900">Rp {{ $barang->harga }}</p>
   
                   <!-- Reviews -->
                   <div class="mt-6">
@@ -109,7 +111,7 @@
                           <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
                         </svg>
                       </div>
-                      <p class="sr-only">4.7 out of 5 stars</p>
+                      <p class="sr-only">{{ $barang->penilaian }} out of 5 stars</p>
                       <a href="#" class="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500">250 reviews</a>
                     </div>
                   </div>
@@ -125,7 +127,7 @@
                         <div class="text-sm font-medium text-gray-900">Deskripsi Produk</div>
                       </div>
                     </fieldset>
-                    <p>Cangkul tangan ini adalah pilihan ideal untuk pekerjaan pertanian dan kebun Anda. Didesain dengan ergonomis, cangkul ini memberikan kenyamanan dan efisiensi saat digunakan. Mata pisau yang tajam dan tepi yang tahan lama memastikan kinerja optimal saat menggali tanah, meratakan lahan, atau memecah gumpalan tanah.</p>
+                    <p>{{ $barang->deskripsi }}</p>
                     <button type="submit" class="mt-6 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Contact us</button>
                   </form>
                 </section>

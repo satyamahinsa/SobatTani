@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 use Illuminate\Validation\ValidationException;
 use App\Providers\RouteServiceProvider;
-use Illuminate\Validation\ValidationException;
 
 class AuthenticatedSessionController extends Controller
 {

@@ -21,8 +21,11 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call([
+            KursusSeeder::class,
+            JualBeliSeeder::class,
+            HargaPasarSeeder::class,
             KoordinatTanahSeeder::class,
         ]);
     }
-    
+
 }
