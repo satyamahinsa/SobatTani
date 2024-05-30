@@ -11,6 +11,7 @@ use Illuminate\View\View;
 use Illuminate\Validation\ValidationException;
 use App\Providers\RouteServiceProvider;
 
+
 class AuthenticatedSessionController extends Controller
 {
     /**
@@ -31,7 +32,7 @@ class AuthenticatedSessionController extends Controller
             'password' => ['required', 'string'],
         ]);
 
-        if (! Auth::attempt($request->only('email', 'password'), $request->boolean('remember'))) {
+        if (!Auth::attempt($request->only('email', 'password'), $request->boolean('remember'))) {
             throw ValidationException::withMessages([
                 'email' => __('auth.failed'),
             ]);

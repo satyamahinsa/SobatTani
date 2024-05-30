@@ -97,25 +97,28 @@
         </div>
     </div>
 
-    <!-- Display success or error messages -->
-    @if ($message = Session::get('success'))
-        <script>
-            Swal.fire({
-                icon: 'success',
-                title: 'Success',
-                text: '{{ $message }}'
-            });
-        </script>
+   <!-- Sweet Alert Library -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<!-- Your Page Script -->
+<script>
+    @if (session('success'))
+        Swal.fire({
+            icon: 'success',
+            title: 'Success',
+            text: '{{ session('success') }}'
+        });
     @endif
 
-    @if ($message = Session::get('failed'))
-        <script>
-            Swal.fire({
-                icon: 'error',
-                title: 'Error',
-                text: '{{ $message }}'
-            });
-        </script>
+    @if (session('error'))
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: '{{ session('error') }}'
+        });
     @endif
+</script>
+
+
 </body>
 </html>
