@@ -10,10 +10,10 @@
             <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
                 @foreach ($kursuses as $kursus)
                 <article class="px-3 py-3 flex max-w-xl flex-col items-start justify-between rounded-lg border-solid border-2 border-gray-100 shadow-md">
-                    <img src="{{ asset($kursus->gambar_kursus) }}" alt="{{ $kursus->judul }}" class="w-full h-48 object-cover mb-4">
+                    <img src="{{ asset($kursus->gambar_kursus) }}" alt="{{ $kursus->judul }}" class="w-full h-48 object-cover mb-4 rounded-lg">
                     <div class="flex items-center gap-x-4 text-xs">
                         <time datetime="2023-05-25" class="text-gray-500">{{ $kursus->created_at->diffForHumans() }}</time>
-                        <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">{{ $kursus->kategori }}</a>
+                        <p class="relative z-10 rounded-full bg-gray-300 px-3 py-1.5 font-medium text-black">{{ $kursus->kategori }}</p>
                     </div>
                     <div class="group relative">
                         <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
@@ -23,7 +23,7 @@
                             </a>
                         </h3>
                         <div class="relative mt-3 flex items-center gap-x-4">
-                            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?crop=faces&fit=crop&w=256&h=256&q=80" alt="" class="h-10 w-10 rounded-full bg-gray-50">
+                            <img src="{{ $kursus->gambar_penulis }}" alt="{{ $kursus->penulis }}" class="h-10 w-10 rounded-full bg-gray-50">
                             <div class="text-sm leading-6">
                                 <p class="font-semibold text-gray-900">
                                     <a href="#">

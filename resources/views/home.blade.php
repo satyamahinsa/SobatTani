@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite('resources/css/app.css')
+    <link rel=icon type=x-icon href=../img/navbar/main-logo.png>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <title>{{ $title }} | Sobat Tani</title>
@@ -15,24 +16,18 @@
             <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
                 <div class="flex lg:flex-1">
                     <a href="#" class="-m-1.5 p-1.5">
-                        <span class="sr-only">Your Company</span>
-                        <img class="h-20 w-auto" src="{{ asset('img/logo2.png') }}" alt="Logo">
+                        <span class="sr-only">Sobat Tani</span>
+                        <img class="h-20 w-auto" src="{{ asset('img/navbar/main-logo.png') }}" alt="Sobat Tani">
                     </a>
                 </div>
                 @if (Route::has('login'))
                 <div class="flex lg:flex-1 lg:justify-end space-x-4">
                     @auth
-                    <a
-                        href="{{ url('/dashboard') }}"
-                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-                    >
-                        Dashboard
+                    <a href="/kursus" class="rounded-md border-2 border-green-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-600 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-300">
+                        Masuk
                     </a>
                 @else
-                    <a
-                        href="{{ route('login') }}"
-                        class="rounded-md border-2 border-green-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-600 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-300"
-                    >
+                    <a href="{{ route('login') }}" class="rounded-md border-2 border-green-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-600 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-300">
                         Masuk
                     </a>
 
@@ -43,10 +38,10 @@
                             Daftar
                         </a>
                     @endif
-                @endauth
+                    @endauth
+                @endif
                 </div>
             </nav>
-            @endif
         </header>
     
         <div class="relative isolate min-h-screen flex items-center justify-center pt-10 px-6 lg:px-8" style="background-image: url({{ asset('img/hero-petani.jpg') }}); background-size: cover; background-position: center;">
@@ -71,10 +66,17 @@
         <div class="flex justify-center items-center mx-auto mt-10 max-w-7xl lg:max-w-none px-6 lg:px-8">
             <div class="text-center">
                 <div class="flex justify-center items-center grid-cols-1 gap-x-8 gap-y-6 text-base font-semibold leading-7 text-dark sm:grid-cols-2 md:flex lg:gap-x-10">
-                    <a href="/register" class="font-bold text-green-700 hover:underline">Kursus <span aria-hidden="true">&rarr;</span></a>
-                    <a href="/register" class="font-bold text-green-700 hover:underline">Jual Beli <span aria-hidden="true">&rarr;</span></a>
-                    <a href="/register" class="font-bold text-green-700 hover:underline">Harga Pasar <span aria-hidden="true">&rarr;</span></a>
-                    <a href="/register" class="font-bold text-green-700 hover:underline">Titik Kesuburan Tanah <span aria-hidden="true">&rarr;</span></a>
+                    @auth
+                        <a href="/kursus" class="font-bold text-green-700 hover:underline">Kursus <span aria-hidden="true">&rarr;</span></a>
+                        <a href="/jual-beli" class="font-bold text-green-700 hover:underline">Jual Beli <span aria-hidden="true">&rarr;</span></a>
+                        <a href="/harga-pasar" class="font-bold text-green-700 hover:underline">Harga Pasar <span aria-hidden="true">&rarr;</span></a>
+                        <a href="/titik-kesuburan-tanah" class="font-bold text-green-700 hover:underline">Titik Kesuburan Tanah <span aria-hidden="true">&rarr;</span></a>
+                    @else
+                        <a href="{{ route('login') }}" class="font-bold text-green-700 hover:underline">Kursus <span aria-hidden="true">&rarr;</span></a>
+                        <a href="{{ route('login') }}" class="font-bold text-green-700 hover:underline">Jual Beli <span aria-hidden="true">&rarr;</span></a>
+                        <a href="{{ route('login') }}" class="font-bold text-green-700 hover:underline">Harga Pasar <span aria-hidden="true">&rarr;</span></a>
+                        <a href="{{ route('login') }}" class="font-bold text-green-700 hover:underline">Titik Kesuburan Tanah <span aria-hidden="true">&rarr;</span></a>
+                    @endauth
                 </div>
                 <dl class="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
                     <div class="flex flex-col-reverse">

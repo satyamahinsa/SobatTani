@@ -1,6 +1,7 @@
 <x-layout>
     <x-slot:title>{{ $kursus->judul }}</x-slot:title>
-    <div class="container mx-auto my-32">
+    <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+        <div class="container">
             <!-- Breadcrumb Navigation -->
             <nav class="mb-6" aria-label="Breadcrumb">
                 <ol class="list-none p-0 inline-flex">
@@ -26,7 +27,7 @@
             <!-- Course Details -->
             <div class="mb-6">
                 <h2 class="text-2xl font-semibold mb-2">Deskripsi Kursus</h2>
-                <p class="text-gray-700 leading-relaxed">{{ $kursus->deskripsi }}</p>
+                <p class="text-gray-700 text-justify leading-relaxed">{{ $kursus->deskripsi }}</p>
             </div>
 
             <div class="mt-6">

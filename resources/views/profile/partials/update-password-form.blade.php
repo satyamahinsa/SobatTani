@@ -1,15 +1,15 @@
 <section>
     <header>
-        <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
+        <h2 class="text-lg font-medium text-gray-900">
             {{ __('Update Password') }}
         </h2>
 
-        <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
+        <p class="mt-1 text-sm text-gray-600">
             {{ __('Pastikan akun Anda menggunakan kata sandi yang panjang dan acak agar tetap aman.') }}
         </p>
     </header>
 
-    <form method="post" action="{{ route('password.update') }}" class="mt-6 space-y-6 text-lg">
+    <form method="post" action="{{ route('password.update') }}" class="mt-6 space-y-6">
         @csrf
         @method('put')
 
@@ -32,11 +32,8 @@
         </div>
 
         <div class="flex items-center gap-4">
-            <x-primary-button id="saveButton" style="background-color: green; transition: box-shadow 0.3s;" 
-            onmouseover="this.style.boxShadow='0 0 10px 5px lightgreen'" onmouseout="this.style.boxShadow='none'">{{ __('Simpan') }}</x-primary-button>
+            <x-primary-button id="saveButton">{{ __('Simpan') }}</x-primary-button>
         </div>
-        
-
     </form>
 </section>
 
@@ -45,7 +42,7 @@
 <script>
     const passwordInput = document.getElementById('update_password_password');
     const confirmPasswordInput = document.getElementById('update_password_password_confirmation');
-    const saveButton = document.getElementById('savePasswordButton');
+    const saveButton = document.getElementById('saveButton');
 
     passwordInput.addEventListener('input', toggleSaveButton);
     confirmPasswordInput.addEventListener('input', toggleSaveButton);
@@ -58,7 +55,7 @@
         }
     }
 
-    document.getElementById('savePasswordButton').addEventListener('click', function() {
+    document.getElementById('saveButton').addEventListener('click', function() {
         Swal.fire({
             icon: 'success',
             title: 'Berhasil Dirubah',

@@ -12,7 +12,7 @@ class KoordinatTanahSeeder extends Seeder
      */
     public function run(): void
     {
-        $areas = [
+        $koordinats = [
             ['name' => 'Madiun Fertile Soil', 'latitude' => -7.61667, 'longitude' => 111.65],
             ['name' => 'Magetan Fertile Land', 'latitude' => -7.64472, 'longitude' => 111.35917],
             ['name' => 'Malang Rich Soil', 'latitude' => -8.16667, 'longitude' => 112.66667],
@@ -66,14 +66,13 @@ class KoordinatTanahSeeder extends Seeder
             ['name' => 'Karawang Fertile Zone', 'latitude' => -6.3086, 'longitude' => 107.3047],
             ['name' => 'Purwakarta Fertile Area', 'latitude' => -6.5563, 'longitude' => 107.4435],
             ['name' => 'Depok Fertile Soil', 'latitude' => -6.4025, 'longitude' => 106.7942],
-            ];
-        
+        ];
 
-        foreach ($areas as $area) {
+        foreach ($koordinats as $koordinat) {
             KoordinatTanah::create([
-                'name' => $area['name'],
-                'latitude' => $area['latitude'],
-                'longitude' => $area['longitude']
+                'name' => $koordinat['name'],
+                'latitude' => $koordinat['latitude'],
+                'longitude' => $koordinat['longitude'],
             ]);
         }
     }

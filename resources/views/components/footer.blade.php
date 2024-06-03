@@ -14,10 +14,10 @@
             <div class="mb-6 md:mb-0">
                 <h2 class="text-2xl text-yellow-300 font-bold mb-2">Fitur</h2>
                 <ul>
-                    <li class="mb-3 text-white"><a href="#" class="hover:underline">KURSUS</a></li>
-                    <li class="mb-3 text-white"><a href="#" class="hover:underline">JUAL BELI</a></li>
-                    <li class="mb-3 text-white"><a href="#" class="hover:underline">HARGA PASAR</a></li>
-                    <li class="mb-3 text-white"><a href="#" class="hover:underline">TITIK KESUBURAN TANAH</a></li>
+                    <li class="mb-3 text-white"><a href="/kursus" class="hover:underline">KURSUS</a></li>
+                    <li class="mb-3 text-white"><a href="/jual-beli" class="hover:underline">JUAL BELI</a></li>
+                    <li class="mb-3 text-white"><a href="/harga-pasar" class="hover:underline">HARGA PASAR</a></li>
+                    <li class="mb-3 text-white"><a href="/titik-kesuburan-tanah" class="hover:underline">TITIK KESUBURAN TANAH</a></li>
                 </ul>
             </div>
 
@@ -25,9 +25,9 @@
             <div class="mb-6 md:mb-0">
                 <h2 class="text-2xl text-yellow-300 font-bold mb-2">Gabung Bersama Kami!</h2>
                 <ul>
-                    <li class="mb-3 text-white"><a href="#" class="hover:underline">Kursus Pertanian Organik</a></li>
-                    <li class="mb-3 text-white"><a href="#" class="hover:underline">Pelatihan Teknik Penyiraman</a></li>
-                    <li class="mb-3 text-white"><a href="#" class="hover:underline">Seminar Budidaya Tanaman</a></li>
+                    <li class="mb-3 text-white"><a href="/kursus" class="hover:underline">Teknologi Pertanian Terpadu</a></li>
+                    <li class="mb-3 text-white"><a href="/kursus" class="hover:underline">Pengenalan Pertanian Organik</a></li>
+                    <li class="mb-3 text-white"><a href="/kursus" class="hover:underline">Manajemen Irigasi Modern</a></li>
                 </ul>
             </div>
         </div>
