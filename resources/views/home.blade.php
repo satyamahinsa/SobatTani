@@ -164,12 +164,12 @@
                     <p class="text-sm text-center font-semibold leading-6 text-green-700">Jobdesk</p>
                 </div>
                 <div class="flex flex-col items-center w-1/3 max-w-xs">
-                    <img class="h-25 w-25 rounded-md" src="https://randomuser.me/api/portraits/men/2.jpg" alt="Dharma Wiguna Limmarga">
+                    <img class="h-40 w-40 rounded-md" src="img/foto-pengembang/Dharma.jpg" alt="Dharma Wiguna Limmarga">
                     <h3 class="text-base text-center font-semibold leading-7 tracking-tight text-gray-900">Dharma Wiguna Limmarga</h3>
-                    <p class="text-sm text-center font-semibold leading-6 text-green-700">Jobdesk</p>
+                    <p class="text-sm text-center font-semibold leading-6 text-green-700">Membuat View Jual-Beli</p>
                 </div>
                 <div class="flex flex-col items-center w-1/3 max-w-xs">
-                    <img class="h-40 w-40 rounded-md" src="{{asset('img/foto-pengembang/Saya.jpg')}}" alt="Muh Azzam Izzadin">
+                    <img class="h-40 w-40 rounded-md" src="{{asset('img/foto-pengembang/MuhAzzamIzzadin.jpg')}}" alt="Muh Azzam Izzadin">
                     <h3 class="text-base text-center font-semibold leading-7 tracking-tight text-gray-900">Muh Azzam Izzadin</h3>
                     <p class="text-sm text-center font-semibold leading-6 text-green-700">Authentication Web & View Titik Kesuburan  </p>
                 </div>
