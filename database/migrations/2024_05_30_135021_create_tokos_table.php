@@ -13,6 +13,7 @@ return new class extends Migration {
         Schema::create('tokos', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
+            $table->string('kategori');
             $table->string('harga');
             $table->float('penilaian');
             $table->text('deskripsi');

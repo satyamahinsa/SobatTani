@@ -4,8 +4,8 @@
     <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
         <div class="flex justify-center my-5 items-center mx-auto max-w-7xl px-6 lg:px-8">
             <div class="text-center">
-                <h2 class="text-4xl font-bold tracking-tight text-green-700 sm:text-6xl">Jual Beli Komoditas</h2>
-                <p class="mt-6 text-lg leading-8 text-dark">Jual Beli dari berbagai komoditas pertanian di Indonesia</p>
+                <h2 class="text-4xl font-bold tracking-tight text-green-700 sm:text-6xl">Toko Produk Komoditas</h2>
+                <p class="mt-6 text-lg leading-8 text-dark">Produk dari berbagai komoditas pertanian di Indonesia</p>
             </div>
         </div>
         <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
@@ -17,7 +17,7 @@
                 <div class="mt-4 flex justify-between">
                     <div>
                         <h3 class="text-sm text-gray-700">{{ $barang->nama }}</h3>
-                        <p class="mt-1 text-sm text-gray-500">{{ $barang->nama }}</p>
+                        <p class="mt-1 text-sm text-gray-500">{{ $barang->kategori }}</p>
                     </div>
                     <p class="text-sm font-medium text-gray-900">Rp {{ $barang->harga }}</p>
                 </div>
@@ -56,7 +56,7 @@
                                 </button>
 
                                 <div class="grid w-full grid-cols-1 items-start gap-x-6 gap-y-8 sm:grid-cols-12 lg:gap-x-8">
-                                    <div id="modal-product-image" class="aspect-h-3 aspect-w-2 overflow-hidden rounded-lg bg-gray-100 sm:col-span-4 lg:col-span-5">
+                                    <div id="modal-product-image" class="h-full w-full overflow-hidden rounded-lg bg-gray-100 sm:col-span-4 lg:col-span-5">
                                         <img src="" alt="" class="object-cover object-center w-full h-full">
                                     </div>
                                     <div class="sm:col-span-8 lg:col-span-7">
