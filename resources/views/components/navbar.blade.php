@@ -12,7 +12,7 @@
                         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                         {{-- <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link> --}}
                         <x-nav-link href="/kursus" :active="request()->is('kursus*')">Kursus</x-nav-link>
-                        <x-nav-link href="/jual-beli" :active="request()->is('jual-beli')">Jual Beli</x-nav-link>
+                        <x-nav-link href="/toko" :active="request()->is('toko')">Toko</x-nav-link>
                         <x-nav-link href="/harga-pasar" :active="request()->is('harga-pasar')">Harga Pasar</x-nav-link>
                         <x-nav-link href="/titik-kesuburan-tanah" :active="request()->is('titik-kesuburan-tanah')">Titik Kesuburan Tanah</x-nav-link>
                     </div>
@@ -73,7 +73,7 @@
         <div class="space-y-1 px-1 pb-3 pt-2 sm:px-3">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
             <x-nav-link href="/kursus" :active="request()->is('kursus*')">Kursus</x-nav-link>
-            <x-nav-link href="/jual-beli" :active="request()->is('jual-beli')" class="block w-full text-left">Jual Beli</x-nav-link>
+            <x-nav-link href="/toko" :active="request()->is('toko')" class="block w-full text-left">Toko</x-nav-link>
             <x-nav-link href="/harga-pasar" :active="request()->is('harga-pasar')" class="block w-full text-left">Harga Pasar</x-nav-link>
             <x-nav-link href="/titik-kesuburan-tanah" :active="request()->is('titik-kesuburan-tanah')" class="block w-full text-left">Titik Kesuburan Tanah</x-nav-link>
         </div>

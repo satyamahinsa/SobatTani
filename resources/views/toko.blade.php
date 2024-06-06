@@ -63,7 +63,12 @@
                                         <h2 id="modal-product-name" class="text-2xl font-bold text-gray-900 sm:pr-12"></h2>
                                         <p id="modal-product-price" class="text-2xl text-gray-900 mt-2"></p>
                                         <p id="modal-product-description" class="mt-4"></p>
-                                        <button type="submit" class="mt-6 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Contact us</button>
+                                        <a href="http://wa.me/+628976444963">
+                                            <button type="submit" class="mt-6 flex w-full items-center justify-center rounded-md border border-transparent bg-green-600 px-8 py-3 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">
+                                                <i class="fa-brands fa-whatsapp mx-3 w-3"></i>
+                                                Contact us
+                                            </button>
+                                        </a>
                                     </div>
                                 </div>
                             </div>

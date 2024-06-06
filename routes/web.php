@@ -4,7 +4,7 @@ use App\Models\Kursus;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KursusController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\JualBeliController;
+use App\Http\Controllers\TokoController;
 use App\Http\Controllers\HargaPasarController;
 use App\Http\Controllers\TitikKesuburanTanahController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
@@ -38,7 +38,7 @@ Route::get('/kursus/{kursus:slug}', function (Kursus $kursus) {
     return view('detail-kursus', ['kursus' => $kursus]);
 })->middleware(['auth', 'verified'])->name('kursus');
 
-Route::get('/jual-beli', [JualBeliController::class, 'index'])->middleware(['auth', 'verified'])->name('kursus');
+Route::get('/toko', [TokoController::class, 'index'])->middleware(['auth', 'verified'])->name('kursus');
 
 Route::get('/harga-pasar', [HargaPasarController::class, 'index'])->middleware(['auth', 'verified'])->name('kursus');
 

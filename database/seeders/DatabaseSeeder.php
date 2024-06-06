@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             KursusSeeder::class,
-            JualBeliSeeder::class,
+            TokoSeeder::class,
             HargaPasarSeeder::class,
             KoordinatTanahSeeder::class,
         ]);

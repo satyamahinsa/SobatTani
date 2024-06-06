@@ -50,7 +50,7 @@
                 <h1 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">Revitalisasi Pertanian dengan Teknologi</h1>
                 <p class="mt-6 text-lg leading-8 text-gray-300">Indonesia sebagai negara agraris memiliki potensi besar dalam sektor pertanian. "SobatTani" hadir untuk menginspirasi dan memfasilitasi generasi muda agar terlibat dalam pertanian modern yang berkelanjutan dan menguntungkan.</p>
                 <div class="mt-10 flex items-center justify-center gap-x-6">
-                    <a href="#" class="rounded-md bg-green-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Mulai Sekarang</a>
+                    <a href="/register" class="rounded-md bg-green-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600">Mulai Sekarang</a>
                 </div>
             </div>
         </div>        
@@ -174,9 +174,9 @@
                     <p class="text-sm text-center font-semibold leading-6 text-green-700">Authentication Web & View Titik Kesuburan  </p>
                 </div>
                 <div class="flex flex-col items-center w-1/3 max-w-xs">
-                    <img class="h-75 w-75 rounded-md" src="https://randomuser.me/api/portraits/men/4.jpg" alt="Gede Satyamahinsa Prastita Uttama">
+                    <img class="h-40 w-40 rounded-md" src="{{ asset('img/foto-pengembang/GedeSatyamahinsa.jpg') }}" alt="Gede Satyamahinsa Prastita Uttama">
                     <h3 class="text-base text-center font-semibold leading-7 tracking-tight text-gray-900">Gede Satyamahinsa Prastita Uttama</h3>
-                    <p class="text-sm text-center font-semibold leading-6 text-green-700">Jobdesk</p>
+                    <p class="text-sm text-center font-semibold leading-6 text-green-700">Database Schema & View Home</p>
                 </div>
                 <div class="flex flex-col items-center w-1/3 max-w-xs">
                     <img class="h-75 w-75 rounded-md" src="https://randomuser.me/api/portraits/men/5.jpg" alt="Muhammad Alifian Putra Wibowo">
