@@ -179,9 +179,9 @@
                     <p class="text-sm text-center font-semibold leading-6 text-green-700">Database Schema & View Home</p>
                 </div>
                 <div class="flex flex-col items-center w-1/3 max-w-xs">
-                    <img class="h-75 w-75 rounded-md" src="https://randomuser.me/api/portraits/men/5.jpg" alt="Muhammad Alifian Putra Wibowo">
+                    <img class="h-40 w-40 rounded-md" src="{{ asset('img/foto-pengembang/MuhammadAlifianPutraWibowo.jpg') }}" alt="Muhammad Alifian Putra Wibowo">
                     <h3 class="text-base text-center font-semibold leading-7 tracking-tight text-gray-900">Muhammad Alifian Putra Wibowo</h3>
-                    <p class="text-sm text-center font-semibold leading-6 text-green-700">Jobdesk</p>
+                    <p class="text-sm text-center font-semibold leading-6 text-green-700">View & Chart Harga Pasar</p>
                 </div>
             </div>
         </div>
