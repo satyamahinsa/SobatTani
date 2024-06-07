@@ -68,12 +68,12 @@
                 <div class="flex justify-center items-center grid-cols-1 gap-x-8 gap-y-6 text-base font-semibold leading-7 text-dark sm:grid-cols-2 md:flex lg:gap-x-10">
                     @auth
                         <a href="/kursus" class="font-bold text-green-700 hover:underline">Kursus <span aria-hidden="true">&rarr;</span></a>
-                        <a href="/jual-beli" class="font-bold text-green-700 hover:underline">Jual Beli <span aria-hidden="true">&rarr;</span></a>
+                        <a href="/toko" class="font-bold text-green-700 hover:underline">Toko <span aria-hidden="true">&rarr;</span></a>
                         <a href="/harga-pasar" class="font-bold text-green-700 hover:underline">Harga Pasar <span aria-hidden="true">&rarr;</span></a>
                         <a href="/titik-kesuburan-tanah" class="font-bold text-green-700 hover:underline">Titik Kesuburan Tanah <span aria-hidden="true">&rarr;</span></a>
                     @else
                         <a href="{{ route('login') }}" class="font-bold text-green-700 hover:underline">Kursus <span aria-hidden="true">&rarr;</span></a>
-                        <a href="{{ route('login') }}" class="font-bold text-green-700 hover:underline">Jual Beli <span aria-hidden="true">&rarr;</span></a>
+                        <a href="{{ route('login') }}" class="font-bold text-green-700 hover:underline">Toko <span aria-hidden="true">&rarr;</span></a>
                         <a href="{{ route('login') }}" class="font-bold text-green-700 hover:underline">Harga Pasar <span aria-hidden="true">&rarr;</span></a>
                         <a href="{{ route('login') }}" class="font-bold text-green-700 hover:underline">Titik Kesuburan Tanah <span aria-hidden="true">&rarr;</span></a>
                     @endauth
@@ -155,7 +155,7 @@
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
             <div class="w-full text-center">
                 <h2 class="text-3xl font-bold tracking-tight text-green-700 sm:text-4xl">Tim Pengembang</h2>
-                <p class="mt-6 text-lg leading-8 text-gray-600">Sekumpulan Orang yang Kreatif</p>
+                <p class="mt-6 text-lg leading-8 text-gray-600">Kami adalah tim pengembang yang penuh semangat dan berdedikasi tinggi, siap membawa inovasi teknologi ke setiap proyek yang kami kerjakan</p>
             </div>
             <div class="flex flex-wrap justify-center gap-8 mt-12">
                 <div class="flex flex-col items-center w-1/3 max-w-xs">

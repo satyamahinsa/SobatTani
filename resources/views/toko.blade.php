@@ -8,9 +8,19 @@
                 <p class="mt-6 text-lg leading-8 text-dark">Produk dari berbagai komoditas pertanian di Indonesia</p>
             </div>
         </div>
-        <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+        
+        <div class="flex justify-center my-5">
+            <div class="relative w-1/2">
+                <input type="text" id="product-filter" class="border rounded p-2 w-full pl-10" placeholder="Cari produk...">
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <i class="fa-solid fa-magnifying-glass text-gray-400"></i>
+                </div>
+            </div>
+        </div>
+
+        <div id="product-list" class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
             @foreach($barangs as $barang)
-            <div class="group relative rounded-lg border-solid border-2 border-gray-100 shadow-md p-3">
+            <div class="group relative rounded-lg border-solid border-2 border-gray-100 shadow-md p-3 product-item" data-name="{{ $barang->nama }}">
                 <div id="product-image-{{ $barang->id }}" class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80 cursor-pointer" data-id="{{ $barang->id }}">
                     <img src="{{ $barang->gambar_produk }}" alt="{{ $barang->nama }}" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
                 </div>
@@ -41,6 +51,7 @@
             </div>
             @endforeach
         </div>
+        
         <div id="product-modal" class="fixed inset-0 hidden z-10 overflow-y-auto">
             <div class="relative z-10" role="dialog" aria-modal="true">
                 <div class="fixed inset-0 hidden bg-gray-500 bg-opacity-75 transition-opacity md:block"></div>
@@ -84,6 +95,8 @@
             const productImages = document.querySelectorAll('[id^="product-image-"]');
             const productModal = document.getElementById('product-modal');
             const closeModalButton = document.getElementById('close-modal');
+            const productFilter = document.getElementById('product-filter');
+            const productItems = document.querySelectorAll('.product-item');
             
             productImages.forEach(image => {
                 image.addEventListener('click', function() {
@@ -107,6 +120,18 @@
                 if (event.target == productModal) {
                     productModal.classList.add('hidden');
                 }
+            });
+
+            productFilter.addEventListener('input', function() {
+                const filterValue = this.value.toLowerCase();
+                productItems.forEach(item => {
+                    const productName = item.getAttribute('data-name').toLowerCase();
+                    if (productName.includes(filterValue)) {
+                        item.classList.remove('hidden');
+                    } else {
+                        item.classList.add('hidden');
+                    }
+                });
             });
         });
     </script>
