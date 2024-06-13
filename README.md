@@ -1,20 +1,22 @@
 # Sobat Tani
 
----
-
 ## Deskripsi Singkat
 
 SobatTani adalah aplikasi yang dirancang khusus untuk memberikan kemudahan kepada para petani dan generasi muda dalam menjalankan aktivitas pertanian dengan teknik modern saat ini. Tujuan utama dari aplikasi ini adalah sebagai langkah strategis untuk memfasilitasi petani dan khususnya generasi muda dalam mengakses pendidikan, pasar, dan komunitas pertanian.
 
 ## Fitur
 
-1. Kursus
+1. **Kursus**
+
    Fitur ini memberikan wawasan mendalam mengenai pertanian modern kepada pengguna dalam bentuk video. Konten video ini bisa berupa demonstrasi praktis, wawancara dengan ahli, atau animasi yang menjelaskan konsep kompleks dengan cara yang mudah dipahami.
-2. Toko
+3. **Toko**
+
    Fitur ini menampilkan setiap produk yang dilengkapi dengan informasi penting seperti nama, kategori, harga, dan penilaian pengguna terhadap produk. Selain itu juga, terdapat opsi untuk menghubungi penjual langsung melalui Whatsapp.
-3. Harga Pasar
+5. **Harga Pasar**
+
    Fitur ini menyediakan grafik fluktuasi harga terkini dan informasi yang akurat dan terbaru mengenai harga komoditas pertanian. Setiap komoditas menampilkan grafik, gambar komoditas, nama, deskripsi singkat, harga terkini, dan persentase perubahan harga.
-4. Titik Kesuburan Tanah
+7. **Titik Kesuburan Tanah**
+
    Fitur ini mengidentifikasi titik-titik kesuburan tanah di daerah pengguna, terutama Pulau Jawa. Marker pada peta menandai lokasi-lokasi dengan kesuburan tanah yang tinggi dengan berisi informasi lebih lanjut tentang masing-masing titik.
 
 ## Framework & Library
