@@ -47,6 +47,11 @@
                 <i class="fa-brands fa-instagram fa-2x mx-2"></i>
             </a>
         </div>
+
+        <!-- Scroll to Top Button -->
+        <button id="scrollTopBtn" class="fixed bottom-5 right-5 bg-green-800 text-white px-5 py-4 border-2 rounded-full shadow-lg transition-opacity opacity-0">
+            <i class="fas fa-chevron-up"></i>
+        </button>
         
         <!-- Copyright -->
         <div class="mt-8 text-white text-center">
@@ -54,3 +59,25 @@
         </div>
     </div>
 </footer>
+
+<script>
+    // Scroll to top functionality
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+    window.onscroll = function() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            scrollTopBtn.classList.remove('opacity-0');
+            scrollTopBtn.classList.add('opacity-100');
+        } else {
+            scrollTopBtn.classList.remove('opacity-100');
+            scrollTopBtn.classList.add('opacity-0');
+        }
+    };
+
+    scrollTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+</script>
